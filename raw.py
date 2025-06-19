@@ -25,12 +25,12 @@ with SB(uc=True, test=True) as sb:
         sb.uc_gui_handle_captcha()
         sb.sleep(1)
         try:
-            input_field = 'select[id="ageYear"]'
+            input_field = 'select#ageYear'
             sb.uc_click(input_field, reconnect_time=4)
             rnd = random.randint(1960,2008)
             sb.uc_gui_write(rnd)
             input_btn = 'a[id="view_product_page_btn"]'
-            sb.uc_click(input_btn, reconnect_time=4)
+            sb.uc_click('span:contains("View Page")', reconnect_time=4)
         except:
             print()
         rnd = random.randint(15,600)
